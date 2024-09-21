@@ -44,10 +44,10 @@ body {
 	color: var(--color-text);
 	font-family: 'Shantell Sans';
 	background-image: linear-gradient(
-			transparent 0%,
-			transparent 96%,
-			var(--color-cells) 96%,
-			var(--color-cells) 100%
+			var(--color-cells) 0%,
+			var(--color-cells) 4%,
+			transparent 4%,
+			transparent 100%
 		),
 		linear-gradient(
 			to right,
