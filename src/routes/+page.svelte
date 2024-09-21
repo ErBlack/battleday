@@ -25,7 +25,10 @@
 	}
 
 	.content {
-		margin-left: calc(round(100vw / 2, var(--cell-size)) - var(--content-width) / 2);
+		margin-left: calc(
+			round(100vw / 2, var(--cell-size)) - (var(--content-width) / 2) - var(--cell-size)
+		);
+		padding: 0 var(--cell-size);
 		width: var(--content-width);
 	}
 </style>
