@@ -2,15 +2,13 @@
 	import './styles.css';
 	import Invitation from '../ui/invitation/invitation.svelte';
 
-	const start = new Date('2024-10-12T16:00:00Z');
-	const easter = new Date('2024-10-04T10:00:00Z');
+	const start = new Date('2024-10-12T14:00:00Z');
+	const easter = new Date('2024-10-04T08:00:00Z');
 </script>
 
-<main>
-	<div class="content">
-		<h1>Battleday</h1>
-		<Invitation {start} {easter} />
-	</div>
+<main class="content">
+	<h1>Battleday</h1>
+	<Invitation {start} {easter} />
 </main>
 
 <style>
@@ -25,20 +23,9 @@
 			'SPAC' 50;
 		font-weight: 415;
 	}
-	main {
-		height: 100%;
-		display: grid;
-		grid-template-rows: max-content 1fr;
-	}
 
 	.content {
 		margin-left: calc(round(100vw / 2, var(--cell-size)) - var(--content-width) / 2);
 		width: var(--content-width);
-	}
-
-	@media (max-width: 450px) {
-		.content {
-			margin-left: var(--cell-size);
-		}
 	}
 </style>

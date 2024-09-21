@@ -18,12 +18,12 @@
 		2,
 		'0'
 	)} in Belgrade at
-	<a class="pin" href="https://yandex.ru/maps/-/CCUZIMBlkA"> Rajićeva 3 apt 2a</a>
+	<a href="https://yandex.ru/maps/-/CCUZIMBlkA"> Rajićeva 3 apt 2a</a>
 </p>
-<p class="text">Celebration <Timer {start} waitIcon="starts after" finishedIcon="in progress" /></p>
+<p class="text">Celebration <Timer {start} waitIcon="starts in" finishedIcon="in progress" /></p>
 
 <p class="text">
-	Easter egg hunt <Timer start={easter} waitIcon="starts after" finishedIcon="has begun" />
+	Easter egg hunt <Timer start={easter} waitIcon="starts in" finishedIcon="has begun" showSeconds />
 </p>
 <Links />
 
@@ -56,13 +56,5 @@
 			'BNCE' 35,
 			'INFM' 42,
 			'SPAC' 0;
-	}
-
-	.pin::before {
-		content: '📍 ';
-	}
-
-	.pin:hover::before {
-		content: '🇷🇸 ';
 	}
 </style>
