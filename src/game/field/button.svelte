@@ -7,7 +7,7 @@
 		border-radius: calc(var(--cell-size) / 4);
 		color: inherit;
 		font: inherit;
-		border: solid calc(var(--cell-size) / 12) currentColor;
+		border: solid calc(max(var(--cell-size) / 12, 2px)) currentColor;
 		padding: 0;
 		margin: 0;
 		text-align: center;

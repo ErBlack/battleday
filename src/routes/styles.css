@@ -29,7 +29,7 @@
 
 @media (max-width: 450px) {
 	:root {
-		--cell-size: calc(100vw / (var(--content-cells) + 2));
+		--cell-size: calc(round(100vw / (var(--content-cells) + 2), 4px));
 	}
 }
 
