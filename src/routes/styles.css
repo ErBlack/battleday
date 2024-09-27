@@ -2,6 +2,7 @@
 	--color-text: #3a3292;
 	--color-cells: #6cbee1;
 	--color-link: #265bfb;
+	--color-red: #ef5f33;
 
 	--content-cells: 16;
 	--content-width: calc(16 * var(--cell-size));

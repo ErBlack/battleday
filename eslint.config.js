@@ -12,6 +12,13 @@ export default [
 	prettier,
 	...svelte.configs['flat/prettier'],
 	{
+		rules: {
+			'@typescript-eslint/ban-ts-comment': 'off',
+			'svelte/no-at-html-tags': 'off',
+			'svelte/valid-compile': 'off'
+		}
+	},
+	{
 		languageOptions: {
 			globals: {
 				...globals.browser,
