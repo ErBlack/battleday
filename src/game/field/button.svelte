@@ -8,6 +8,9 @@
 		color: inherit;
 		font: inherit;
 		border: solid calc(var(--cell-size) / 12) currentColor;
+		padding: 0;
+		margin: 0;
+		text-align: center;
 		background: none;
 		text-align: center;
 		font-size: var(--cell-size);

@@ -114,6 +114,8 @@
 		position: absolute;
 		left: var(--cell-size);
 		top: var(--cell-size);
+		width: calc(10 * var(--cell-size));
+		height: calc(10 * var(--cell-size));
 		outline: none;
 		z-index: 1;
 	}
