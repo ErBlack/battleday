@@ -8,15 +8,16 @@
 	const easter = new Date('2024-10-04T08:00:00Z');
 </script>
 
-<main class="content">
-	<h1>Battleday</h1>
-	{#if !$gameOpen}
+{#if !$gameOpen}
+	<main class="content">
+		<h1>Battleday</h1>
+
 		<Invitation {start} {easter} />
-	{/if}
-	{#if $gameOpen}
-		<Game />
-	{/if}
-</main>
+	</main>
+{/if}
+{#if $gameOpen}
+	<Game />
+{/if}
 
 <style>
 	h1 {

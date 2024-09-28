@@ -41,8 +41,10 @@
 </script>
 
 <div>
-	<h2>Round {round}</h2>
-	<Field field={Player1.enemyField} showAround />
+	<h2>{round === 0 ? 'Place your ships' : `Round ${round}`}</h2>
+	{#if round !== 0}
+		<Field field={Player1.enemyField} showAround />
+	{/if}
 	<Field field={Player1.personalField} />
 </div>
 
@@ -61,5 +63,7 @@
 	div {
 		display: grid;
 		gap: var(--cell-size);
+		margin: var(--cell-size) 0 var(--cell-size)
+			calc(round(100vw / 2, var(--cell-size)) - (var(--cell-size) * 5) - var(--cell-size));
 	}
 </style>
