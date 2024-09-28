@@ -49,6 +49,7 @@
 html,
 body {
 	min-width: var(--content-width);
+	min-height: 100%;
 }
 
 body {

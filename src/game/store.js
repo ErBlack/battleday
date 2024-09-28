@@ -14,6 +14,4 @@ export const winCode = persisted('batteledayWinCode', '');
 
 export const gameActivated = persisted('battledayGameActivated', false);
 
-export const gameOpen = writable(
-	typeof location !== 'undefined' && location.search.includes('debug')
-);
+export const gameOpen = writable(false);

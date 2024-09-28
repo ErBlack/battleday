@@ -17,6 +17,13 @@
 	 */
 	export let showSeconds = false;
 
+	/**
+	 * @type {VoidFunction}
+	 */
+	export let onEnd = () => {};
+
+	let ended = Date.now() >= Number(start);
+
 	const INTERVALS = [1000, 60, 60, 24, 7];
 
 	/**
@@ -100,6 +107,11 @@
 
 			return `${waitIcon} ${result.join(' ')}`;
 		} else {
+			if (!ended) {
+				ended = true;
+				onEnd();
+			}
+
 			return finishedIcon;
 		}
 	}

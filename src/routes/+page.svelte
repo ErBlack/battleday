@@ -1,19 +1,22 @@
 <script>
 	import './styles.css';
+	import { easterAvailable } from './init.js';
 	import Invitation from '../ui/invitation/invitation.svelte';
 	import Game from '../game/game.svelte';
 	import { gameOpen } from '../game/store.js';
 	import Result from '../game/result/result.svelte';
-	const start = new Date('2024-10-12T14:00:00Z');
-	const easter = new Date('2024-10-04T08:00:00Z');
+	import Egg from '../egg/egg.svelte';
 </script>
 
 {#if !$gameOpen}
 	<main class="content">
 		<h1>Battleday</h1>
 
-		<Invitation {start} {easter} />
+		<Invitation />
 	</main>
+	{#if $easterAvailable}
+		<Egg />
+	{/if}
 {:else}
 	<Game />
 {/if}

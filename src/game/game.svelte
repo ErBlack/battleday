@@ -60,7 +60,7 @@
 	h2 {
 		font-size: calc(var(--cell-size));
 		line-height: calc(var(--cell-size));
-		margin: 0;
+		margin: 0 0 0 var(--cell-size);
 		transform: translateY(calc(var(--cell-size) * 0.22));
 		font-variation-settings:
 			'BNCE' 5,
@@ -72,6 +72,6 @@
 		display: grid;
 		gap: var(--cell-size);
 		margin: var(--cell-size) 0 var(--cell-size)
-			calc(round(100vw / 2, var(--cell-size)) - (var(--cell-size) * 5) - var(--cell-size));
+			calc(round(100vw / 2, var(--cell-size)) - (var(--cell-size) * 6));
 	}
 </style>
