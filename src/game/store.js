@@ -1,11 +1,19 @@
 import { writable } from 'svelte/store';
-import { getDefaultFieldStore } from './field/getDefaultFieldStore.js';
+import { persisted } from 'svelte-local-storage-store';
+
+/**
+ * @typedef {import('svelte/store').Writable<true|false|null>} WinnerState
+ */
+
+/**
+ * @type {WinnerState}
+ */
+export const winner = writable(null);
+
+export const winCode = persisted('batteledayWinCode', '');
+
+export const gameActivated = persisted('battledayGameActivated', false);
 
 export const gameOpen = writable(
 	typeof location !== 'undefined' && location.search.includes('debug')
 );
-
-export const player1Field = writable(getDefaultFieldStore());
-export const player1PreviewField = writable(getDefaultFieldStore());
-export const player2Field = writable(getDefaultFieldStore());
-export const player2PreviewField = writable(getDefaultFieldStore());

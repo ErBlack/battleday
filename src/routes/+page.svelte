@@ -3,7 +3,7 @@
 	import Invitation from '../ui/invitation/invitation.svelte';
 	import Game from '../game/game.svelte';
 	import { gameOpen } from '../game/store.js';
-
+	import Result from '../game/result/result.svelte';
 	const start = new Date('2024-10-12T14:00:00Z');
 	const easter = new Date('2024-10-04T08:00:00Z');
 </script>
@@ -14,10 +14,11 @@
 
 		<Invitation {start} {easter} />
 	</main>
-{/if}
-{#if $gameOpen}
+{:else}
 	<Game />
 {/if}
+
+<Result />
 
 <style>
 	h1 {

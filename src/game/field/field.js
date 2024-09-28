@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store';
 import { getNextCellIndex } from './getNextCellIndex.js';
 import { invertAxis } from './invertAxis.js';
+import { getDefaultFieldStore } from './getDefaultFieldStore.js';
 
 /**
  * @typedef {Object} PlacementInteraction
@@ -52,11 +53,8 @@ export class Field {
 	 */
 	interaction;
 
-	/**
-	 * @param {FieldStore} store
-	 */
-	constructor(store) {
-		this.store = store;
+	constructor() {
+		this.store = writable(getDefaultFieldStore());
 		this.interaction = writable(false);
 
 		this.store.subscribe((cells) => {
@@ -292,6 +290,12 @@ export class Field {
 				}
 			};
 		});
+	}
+
+	reset() {
+		this.ships = [];
+		this.shipsMap = {};
+		this.store.set(getDefaultFieldStore());
 	}
 
 	print() {

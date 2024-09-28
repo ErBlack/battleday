@@ -7,6 +7,19 @@
 	--content-cells: 16;
 	--content-width: calc(16 * var(--cell-size));
 	--content-margin: var(--cell-size);
+	--cells-background: linear-gradient(
+			var(--color-cells) 0%,
+			var(--color-cells) 4%,
+			transparent 4%,
+			transparent 100%
+		),
+		linear-gradient(
+			to right,
+			transparent 0%,
+			transparent 96%,
+			var(--color-cells) 96%,
+			var(--color-cells) 100%
+		);
 }
 
 @media (min-width: 1280px) {
@@ -42,19 +55,7 @@ body {
 	margin: 0;
 	color: var(--color-text);
 	font-family: 'Shantell Sans';
-	background-image: linear-gradient(
-			var(--color-cells) 0%,
-			var(--color-cells) 4%,
-			transparent 4%,
-			transparent 100%
-		),
-		linear-gradient(
-			to right,
-			transparent 0%,
-			transparent 96%,
-			var(--color-cells) 96%,
-			var(--color-cells) 100%
-		);
+	background-image: var(--cells-background);
 	background-size: var(--cell-size) var(--cell-size);
 }
 

@@ -1,10 +1,11 @@
-<button on:click {...$$props}><slot /></button>
+<script>
+	export let size = 2;
+</script>
+
+<button on:click {...$$props} class={`size_${size}`}><slot /></button>
 
 <style>
 	button {
-		height: calc(var(--cell-size) * 2);
-		line-height: calc(var(--cell-size) * 2);
-		border-radius: calc(var(--cell-size) / 4);
 		color: inherit;
 		font: inherit;
 		border: solid calc(max(var(--cell-size) / 12, 2px)) currentColor;
@@ -13,8 +14,7 @@
 		text-align: center;
 		background: none;
 		text-align: center;
-		font-size: var(--cell-size);
-		font-weight: 320;
+
 		font-variation-settings:
 			'BNCE' 20,
 			'INFM' 40,
@@ -22,6 +22,21 @@
 		transition:
 			font-variation-settings 0.1s ease-in,
 			transform 0.1s ease-in;
+		font-weight: 320;
+	}
+
+	.size_1 {
+		height: var(--cell-size);
+		line-height: calc(var(--cell-size) - 4px);
+		border-radius: calc(var(--cell-size) / 8);
+		font-size: calc(var(--cell-size) / 2);
+	}
+
+	.size_2 {
+		height: calc(var(--cell-size) * 2);
+		line-height: calc(var(--cell-size) * 2);
+		border-radius: calc(var(--cell-size) / 4);
+		font-size: var(--cell-size);
 	}
 
 	button:not(:disabled):hover {

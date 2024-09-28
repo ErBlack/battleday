@@ -8,12 +8,8 @@ import { User } from './user.js';
  */
 
 export class Player extends User {
-	/**
-	 * @param {RealField} realField
-	 * @param {EphemeralField} ephemeralField
-	 */
-	constructor(realField, ephemeralField) {
-		super(realField, ephemeralField);
+	constructor() {
+		super();
 	}
 
 	async getShotTarget() {

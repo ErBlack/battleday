@@ -9,11 +9,8 @@ import { Field } from './field.js';
  * @extends {Field<RealShip>}
  */
 export class RealField extends Field {
-	/**
-	 * @param {FieldStore} store
-	 */
-	constructor(store) {
-		super(store);
+	constructor() {
+		super();
 	}
 
 	/**

@@ -1,8 +1,5 @@
-/**
- * @typedef {import('../ship/real-ship.js').RealShip} RealShip
- * @typedef {import('../field/real-field.js').RealField} RealField
- * @typedef {import('../field/ephemeral-field.js').EphemeralField} EphemeralField
- */
+import { EphemeralField } from '../field/ephemeral-field.js';
+import { RealField } from '../field/real-field.js';
 
 export class User {
 	/**
@@ -14,13 +11,9 @@ export class User {
 	 */
 	enemyField;
 
-	/**
-	 * @param {RealField} realField
-	 * @param {EphemeralField} ephemeralField
-	 */
-	constructor(realField, ephemeralField) {
-		this.personalField = realField;
-		this.enemyField = ephemeralField;
+	constructor() {
+		this.personalField = new RealField();
+		this.enemyField = new EphemeralField();
 	}
 
 	get ready() {
@@ -59,5 +52,10 @@ export class User {
 	 */
 	async getShotTarget() {
 		throw new Error('Not implemented');
+	}
+
+	reset() {
+		this.personalField.reset();
+		this.enemyField.reset();
 	}
 }

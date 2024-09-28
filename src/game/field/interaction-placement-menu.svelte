@@ -1,5 +1,5 @@
 <script>
-	import Button from './button.svelte';
+	import Button from '../../ui/invitation/button.svelte';
 
 	let show = false;
 	let placed = false;

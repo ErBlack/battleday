@@ -13,11 +13,8 @@ import { isLastCell } from './isLastCell.js';
  * @extends {Field<EphemeralShip>}
  */
 export class EphemeralField extends Field {
-	/**
-	 * @param {FieldStore} store
-	 */
-	constructor(store) {
-		super(store);
+	constructor() {
+		super();
 	}
 
 	/**

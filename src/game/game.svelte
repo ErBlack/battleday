@@ -1,15 +1,11 @@
 <script>
+	import { encrypt } from '$lib/crypt.js';
 	import { wait } from '$lib/wait.js';
-	import { Bot } from './user/bot.js';
 
 	import Field from './field/field.svelte';
-	import { RealField } from './field/real-field.js';
-	import { EphemeralField } from './field/ephemeral-field.js';
-	import { player1Field, player1PreviewField, player2Field, player2PreviewField } from './store.js';
-	import { Player } from './user/player.js';
 
-	const Player1 = new Player(new RealField(player1Field), new EphemeralField(player1PreviewField));
-	const Player2 = new Bot(new RealField(player2Field), new EphemeralField(player2PreviewField));
+	import { Player1, Player2 } from './game.js';
+	import { gameOpen, winCode, winner } from './store.js';
 
 	let round = 0;
 
@@ -34,7 +30,19 @@
 			await Player2.attack(Player1);
 		}
 
-		console.log(Player1.failed ? 'Player 2 wins!' : 'Player 1 wins!');
+		winner.set(Player2.failed);
+
+		if (Player2.failed) {
+			winCode.update((value) => {
+				const code = value || encrypt(String(Date.now()).slice(0, -1));
+
+				return code;
+			});
+		}
+
+		Player1.reset();
+		Player2.reset();
+		gameOpen.set(false);
 	};
 
 	game();
