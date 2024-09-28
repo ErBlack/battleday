@@ -274,6 +274,7 @@
 	if (typeof window !== 'undefined') {
 		onMount(() => {
 			document.body.style.setProperty('overscroll-behavior', 'none');
+			document.body.style.setProperty('touch-action', 'none');
 			window.addEventListener('resize', onWindowsResize);
 			window.addEventListener('mousedown', onMouseDown);
 			window.addEventListener('mousemove', onMouseMove);
@@ -284,7 +285,7 @@
 		});
 
 		onDestroy(() => {
-			document.body.style.removeProperty('overscroll-behavior');
+			document.body.removeAttribute('style');
 			window.removeEventListener('resize', onWindowsResize);
 			window.removeEventListener('mousedown', onMouseDown);
 			window.removeEventListener('mousemove', onMouseMove);
